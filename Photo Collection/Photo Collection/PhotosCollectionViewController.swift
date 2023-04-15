@@ -10,7 +10,10 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class PhotosCollectionViewController: UICollectionViewController {
-
+    
+    let photoController = PhotoController()
+    let themeHelper = ThemeHelper()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,66 +26,72 @@ class PhotosCollectionViewController: UICollectionViewController {
         // Do any additional setup after loading the view.
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "photoCellToDetailView" {
+            
+            let destVC = segue.destination as? PhotoDetailViewController
+            
+            guard let number = self.collectionView.indexPathsForSelectedItems?.first?.item else { fatalError("index path messed up in photoCellToDetailView segue") }
+            
+            destVC?.themeHelper = themeHelper
+            destVC?.photoController = photoController
+            destVC?.photo = photoController.photos[number]
+            
+        } else if segue.identifier == "addToDetailView" {
+            
+            let destVC = segue.destination as? PhotoDetailViewController
+            
+            destVC?.themeHelper = themeHelper
+            destVC?.photoController = photoController
+            
+        } else if segue.identifier == "collectionViewToThemePicker" {
+            
+            let destVC = segue.destination as? PhotoDetailViewController
+            
+            destVC?.themeHelper = themeHelper
+            
+        } else { fatalError("segue messed up") }
+        
     }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return 0
+        return photoController.photos.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
-    
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
+
         // Configure the cell
-    
+
+        let photo = photoController.photos[indexPath.item]
+        
+        cell.photo = photo
+        
         return cell
     }
-
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
     
+    func setTheme() {
+        guard let theme = themeHelper.themePreference else { return }
+        if theme == "Dark" {
+            themeHelper.setThemePreferenceToDark()
+        } else {
+            themeHelper.setThemePreferenceToBlue()
+        }
     }
-    */
-
+    
 }
