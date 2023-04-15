@@ -68,16 +68,16 @@
 		4545DB0229E9BCB600D43013 /* Photo Collection */ = {
 			isa = PBXGroup;
 			children = (
-				4545DB0329E9BCB600D43013 /* AppDelegate.swift */,
-				4545DB1729E9BFDB00D43013 /* Photo.swift */,
+				4545DB0929E9BCB600D43013 /* Main.storyboard */,
+				4545DB1D29EA295400D43013 /* PhotosCollectionViewController.swift */,
+				4545DB2129EA2DA200D43013 /* PhotoDetailViewController.swift */,
+				4545DB2329EA321D00D43013 /* ThemeSelectionViewController.swift */,
 				4545DB1929E9C05A00D43013 /* PhotoController.swift */,
 				4545DB1B29EA227800D43013 /* ThemeHelper.swift */,
-				4545DB0529E9BCB600D43013 /* SceneDelegate.swift */,
-				4545DB0929E9BCB600D43013 /* Main.storyboard */,
-				4545DB2329EA321D00D43013 /* ThemeSelectionViewController.swift */,
-				4545DB2129EA2DA200D43013 /* PhotoDetailViewController.swift */,
 				4545DB1F29EA2C5D00D43013 /* PhotosCollectionViewCell.swift */,
-				4545DB1D29EA295400D43013 /* PhotosCollectionViewController.swift */,
+				4545DB1729E9BFDB00D43013 /* Photo.swift */,
+				4545DB0329E9BCB600D43013 /* AppDelegate.swift */,
+				4545DB0529E9BCB600D43013 /* SceneDelegate.swift */,
 				4545DB0C29E9BCBA00D43013 /* Assets.xcassets */,
 				4545DB0E29E9BCBA00D43013 /* LaunchScreen.storyboard */,
 				4545DB1129E9BCBA00D43013 /* Info.plist */,
