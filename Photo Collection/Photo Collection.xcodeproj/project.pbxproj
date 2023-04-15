@@ -18,6 +18,7 @@
 		4545DB1E29EA295400D43013 /* PhotosCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4545DB1D29EA295400D43013 /* PhotosCollectionViewController.swift */; };
 		4545DB2029EA2C5D00D43013 /* PhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4545DB1F29EA2C5D00D43013 /* PhotosCollectionViewCell.swift */; };
 		4545DB2229EA2DA200D43013 /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4545DB2129EA2DA200D43013 /* PhotoDetailViewController.swift */; };
+		4545DB2429EA321D00D43013 /* ThemeSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4545DB2329EA321D00D43013 /* ThemeSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		4545DB1D29EA295400D43013 /* PhotosCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewController.swift; sourceTree = "<group>"; };
 		4545DB1F29EA2C5D00D43013 /* PhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosCollectionViewCell.swift; sourceTree = "<group>"; };
 		4545DB2129EA2DA200D43013 /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
+		4545DB2329EA321D00D43013 /* ThemeSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				4545DB1B29EA227800D43013 /* ThemeHelper.swift */,
 				4545DB0529E9BCB600D43013 /* SceneDelegate.swift */,
 				4545DB0929E9BCB600D43013 /* Main.storyboard */,
+				4545DB2329EA321D00D43013 /* ThemeSelectionViewController.swift */,
 				4545DB2129EA2DA200D43013 /* PhotoDetailViewController.swift */,
 				4545DB1F29EA2C5D00D43013 /* PhotosCollectionViewCell.swift */,
 				4545DB1D29EA295400D43013 /* PhotosCollectionViewController.swift */,
@@ -160,6 +163,7 @@
 				4545DB1E29EA295400D43013 /* PhotosCollectionViewController.swift in Sources */,
 				4545DB0429E9BCB600D43013 /* AppDelegate.swift in Sources */,
 				4545DB2229EA2DA200D43013 /* PhotoDetailViewController.swift in Sources */,
+				4545DB2429EA321D00D43013 /* ThemeSelectionViewController.swift in Sources */,
 				4545DB0629E9BCB600D43013 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
