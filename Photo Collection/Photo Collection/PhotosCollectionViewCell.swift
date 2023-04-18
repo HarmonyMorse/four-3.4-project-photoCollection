@@ -9,14 +9,24 @@ import UIKit
 
 class PhotosCollectionViewCell: UICollectionViewCell {
     
-    var photo: Photo? {
-        didSet {
-            updateViews()
-        }
-    }
+    var photo: Photo? //{
+//        didSet {
+//            updateViews()
+//        }
+//    }
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    
+    /*func set(book: Book?) {
+     self.book = book
+     updateViews()
+ }*/
+    
+    func set(photo: Photo) {
+        self.photo = photo
+        updateViews()
+    }
     
     private func updateViews() {
         

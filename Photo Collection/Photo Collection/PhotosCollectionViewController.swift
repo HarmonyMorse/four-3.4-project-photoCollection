@@ -21,9 +21,14 @@ class PhotosCollectionViewController: UICollectionViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+//        self.collectionView!.register(PhotosCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView!.reloadData()
     }
 
     // MARK: - Navigation
@@ -74,13 +79,14 @@ class PhotosCollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
-
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PhotosCollectionViewCell else { return UICollectionViewCell() }
+        
         // Configure the cell
 
-        let photo = photoController.photos[indexPath.item]
+        let photo = photoController.photos[indexPath.row]
         
-        cell.photo = photo
+        //cell.photo = photo
+        cell.set(photo: photo)
         
         return cell
     }

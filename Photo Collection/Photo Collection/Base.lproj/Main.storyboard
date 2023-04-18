@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="10" minY="0.0" maxX="10" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="05L-py-ChE" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="05L-py-ChE" customClass="PhotosCollectionViewCell" customModule="Photo_Collection" customModuleProvider="target">
                                 <rect key="frame" x="10" y="0.0" width="119.99999999999997" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="UO1-vZ-PLe">
@@ -62,8 +62,8 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <connections>
-                                    <outlet property="photoImageView" destination="WL8-CV-95E" id="a1s-KP-ipG"/>
-                                    <outlet property="titleLabel" destination="CmQ-20-7YC" id="V9t-VR-qA5"/>
+                                    <outlet property="photoImageView" destination="WL8-CV-95E" id="VOa-bw-ZXz"/>
+                                    <outlet property="titleLabel" destination="CmQ-20-7YC" id="Rr0-ro-eUB"/>
                                     <segue destination="s1j-H8-3Ky" kind="show" identifier="photoCellToDetailView" id="iQG-Yr-4Dy"/>
                                 </connections>
                             </collectionViewCell>
