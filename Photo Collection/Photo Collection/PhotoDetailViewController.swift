@@ -14,8 +14,6 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     var themeHelper: ThemeHelper?
     
     let imagePicker = UIImagePickerController()
-//    imagePicker.allowsEditing = true
-//    imagePicker.delegate = self
     
     @IBOutlet weak var photoImageView: UIImageView!
     @IBOutlet weak var titleTextField: UITextField!
@@ -25,6 +23,7 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
         setTheme()
         updateViews()
         imagePicker.delegate = self
+        imagePicker.allowsEditing = true
     }
     
     @IBAction func savePhoto(_ sender: UIBarButtonItem) {
@@ -82,12 +81,28 @@ class PhotoDetailViewController: UIViewController, UIImagePickerControllerDelega
     */
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        
 //        info[UIImagePickerController.InfoKey]
-        guard let photoInfo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        if let editedPhotoInfo = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            let photoInfo = editedPhotoInfo
+            photoImageView.image = photoInfo
+            imagePicker.dismiss(animated: true)
+        } else {
+            let photoInfo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
+            photoImageView.image = photoInfo
+            imagePicker.dismiss(animated: true)
+        }
+        
+        
+//        guard let photoInfo = info[UIImagePickerController.InfoKey.originalImage] as? UIImage else { return }
+        
+//        photoImageView.image = photoInfo
+//        imagePicker.dismiss(animated: true)
+        
+        
 //        print(info[UIImagePickerController.InfoKey.editedImage])
 //        let selectedImage = info
-        photoImageView.image = photoInfo
-        imagePicker.dismiss(animated: true)
     }
     
 }
