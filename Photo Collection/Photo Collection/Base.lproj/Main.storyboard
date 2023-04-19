@@ -78,7 +78,7 @@
                     <navigationItem key="navigationItem" id="WpO-W6-Cfz">
                         <barButtonItem key="leftBarButtonItem" title="Select Theme" id="mb0-PD-lzv">
                             <connections>
-                                <segue destination="dTP-kN-vT4" kind="presentation" identifier="collectionViewToThemePicker" id="1Ab-e4-1lK"/>
+                                <segue destination="dTP-kN-vT4" kind="presentation" identifier="collectionViewToThemePicker" modalPresentationStyle="fullScreen" id="1Ab-e4-1lK"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kcp-8G-Kgq">
@@ -97,7 +97,7 @@
             <objects>
                 <viewController id="dTP-kN-vT4" customClass="ThemeSelectionViewController" customModule="Photo_Collection" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="k3n-rB-X9G">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a theme :)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-I9-H7r">
